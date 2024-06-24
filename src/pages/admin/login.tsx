@@ -1,59 +1,50 @@
-// src/pages/admin/login.js
-import { useState } from 'react';
-import { useRouter } from 'next/router';
-import { TextInput, PasswordInput, Paper, Button, Title } from '@mantine/core';
-import { signIn } from 'next-auth/client';
-import Notification from '../../components/Notification'; // Import Notification component
+import { signIn } from 'next-auth/react';
+import { useState, FormEvent } from 'react';
 
-const AdminLogin = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [notification, setNotification] = useState(null); // State for notification
-  const router = useRouter();
+export default function Login() {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [error, setError] = useState<string>('');
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const result = await signIn('credentials', {
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    const res = await signIn('credentials', {
       redirect: false,
       email,
       password,
     });
 
-    if (result.ok) {
-      router.push('/admin/dashboard');
+    if (res?.error) {
+      setError(res.error);
     } else {
-      // Show error notification
-      setNotification({ type: 'error', message: 'Invalid email or password.' });
+      window.location.href = '/admin/dashboard';
     }
   };
 
   return (
-    <Paper padding="md" style={{ maxWidth: 400, margin: 'auto' }}>
-      <Title order={2}>Admin Login</Title>
-      {notification && (
-        <Notification type={notification.type} message={notification.message} />
-      )}
+    <div>
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <TextInput
-          label="Email"
-          placeholder="admin@example.com"
-          value={email}
-          onChange={(event) => setEmail(event.currentTarget.value)}
-          required
-        />
-        <PasswordInput
-          label="Password"
-          placeholder="Your password"
-          value={password}
-          onChange={(event) => setPassword(event.currentTarget.value)}
-          required
-        />
-        <Button type="submit" fullWidth mt="md">
-          Login
-        </Button>
+        <label>
+          Email:
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </label>
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        <button type="submit">Login</button>
+        {error && <p>{error}</p>}
       </form>
-    </Paper>
+    </div>
   );
-};
-
-export default AdminLogin;
+}

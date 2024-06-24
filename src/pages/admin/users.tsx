@@ -1,8 +1,8 @@
 // src/pages/admin/users.js
-import AdminLayout from '../../components/AdminLayout';
 import { Title, Table, Button } from '@mantine/core';
 import { useState, useEffect } from 'react';
-import LoadingSpinner from '../../components/LoadingSpinner'; // Import LoadingSpinner component
+import LoadingSpinner from '../components/LoadingSpinner';
+import AdminLayout from './layout';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
