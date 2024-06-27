@@ -6,7 +6,7 @@ import { Session } from "next-auth"; // Import Session type
 
 function MyApp({ Component, pageProps }: AppProps & { session: Session }) { // Add type annotation for props
   return (
-    <MantineProvider>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
       <SessionProvider session={pageProps.session}>
         <Component {...pageProps} />
       </SessionProvider>

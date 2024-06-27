@@ -1,11 +1,9 @@
-// src/pages/admin/analytics.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Title, Text } from '@mantine/core';
 import AdminLayout from './layout';
 import CustomPagination from '../components/Pagination';
 
 const Analytics = () => {
-  // Mock analytics data
   const analyticsData = [
     { id: 1, metric: 'Active Users', value: 120 },
     { id: 2, metric: 'Total Listings', value: 45 },

@@ -9,13 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantine/core": "^7.10.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mantine/core": "^7.11.0",
     "@mantine/hooks": "^7.10.2",
     "@mantine/notifications": "^7.10.2",
+    "@tabler/icons-react": "^3.7.0",
+    "cookies-next": "^4.2.1",
     "next": "14.2.4",
     "next-auth": "^4.24.7",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "useLanguage": "link:@/hooks/useLanguage"
   },
   "devDependencies": {
     "@types/next-auth": "^3.15.0",
@@ -25,7 +30,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5"
   }
 }

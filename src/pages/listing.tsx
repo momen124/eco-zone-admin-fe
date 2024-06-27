@@ -1,16 +1,13 @@
-// src/pages/admin/listings.js
 import { Title, Table, Button, Modal, Text } from '@mantine/core';
 import { useState, useEffect } from 'react';
 import AdminLayout from './layout';
 
 const Listings = () => {
   const [listings, setListings] = useState([]);
-  const [showDeleteModal, setShowDeleteModal] = useState(false); // State for delete modal
-  const [listingToDelete, setListingToDelete] = useState(null); // State to store listing to delete
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [listingToDelete, setListingToDelete] = useState(null);
 
   useEffect(() => {
-    // Fetch listings from your API
-    // Here we use a static array for demonstration purposes
     setListings([
       { id: 1, title: 'Item 1', status: 'Pending' },
       { id: 2, title: 'Item 2', status: 'Approved' },
@@ -19,9 +16,7 @@ const Listings = () => {
   }, []);
 
   const deleteListing = (id) => {
-    // Implement API call to delete listing
     console.log(`Deleted listing ${id}`);
-    // Close modal after deletion
     setShowDeleteModal(false);
   };
 
@@ -56,7 +51,6 @@ const Listings = () => {
         <tbody>{rows}</tbody>
       </Table>
 
-      {/* Delete listing modal */}
       <Modal
         opened={showDeleteModal}
         onClose={() => setShowDeleteModal(false)}
