@@ -22,6 +22,7 @@
     "outline": "link:@heroicons/react/outline",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
     "tabler-icons-react": "^1.56.0",
     "useLanguage": "link:@/hooks/useLanguage"
   },

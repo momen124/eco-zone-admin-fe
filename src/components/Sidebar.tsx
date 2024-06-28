@@ -16,7 +16,7 @@ const Sidebar = () => {
                 <nav className="mt-6">
                     <NavItem href="/dashboard" icon={<HomeIcon className="w-5 h-5" />} text="Dashboard" isActive={false} />
                     <NavItem href="/analytics" icon={<ChartBarIcon className="w-5 h-5" />} text="Analytics" isActive={false} />
-                    <NavItem href="/listings" icon={<DocumentTextIcon className="w-5 h-5" />} text="Listings" isActive={false} />
+                    <NavItem href="/listing" icon={<DocumentTextIcon className="w-5 h-5" />} text="Listings" isActive={false} />
                     <NavItem href="/users" icon={<UserGroupIcon className="w-5 h-5" />} text="Users" isActive={false} />
                     <NavItem href="/Settings" icon={<CogIcon className="w-5 h-5" />} text="Settings" isActive={false} />
                     <NavItem href="/new-product" icon={<DocumentTextIcon className="w-5 h-5" />} text="New Product" isActive={true} />
