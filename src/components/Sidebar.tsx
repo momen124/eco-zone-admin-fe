@@ -20,6 +20,8 @@ const Sidebar = () => {
                     <NavItem href="/users" icon={<UserGroupIcon className="w-5 h-5" />} text="Users" isActive={false} />
                     <NavItem href="/Settings" icon={<CogIcon className="w-5 h-5" />} text="Settings" isActive={false} />
                     <NavItem href="/new-product" icon={<DocumentTextIcon className="w-5 h-5" />} text="New Product" isActive={true} />
+                    <NavItem href="/reports" icon={<DocumentTextIcon className="w-5 h-5" />} text="reports" isActive={true} />
+
                 </nav>
             </div>
         </aside>
