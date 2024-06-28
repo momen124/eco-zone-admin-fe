@@ -1,6 +1,6 @@
 import { Title, Table, Button } from '@mantine/core';
 import { useState, useEffect } from 'react';
-import AdminLayout from './layout';
+import AdminLayout from '../components/layout';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 

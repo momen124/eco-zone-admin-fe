@@ -1,15 +1,15 @@
-// src/components/Notification.js
+import React from 'react';
 import { Notification as MantineNotification } from '@mantine/core';
 
-const Notification = ({ type, message }) => {
-  return (
-    <MantineNotification
-      title={type === 'error' ? 'Error' : 'Success'}
-      color={type === 'error' ? 'red' : 'blue'}
-    >
-      {message}
-    </MantineNotification>
-  );
+const Notification: React.FC<{ type: 'error' | 'success', message: string }> = ({ type, message }) => {
+    return (
+        <MantineNotification
+            title={type === 'error' ? 'Error' : 'Success'}
+            color={type === 'error' ? 'red' : 'blue'}
+        >
+            {message}
+        </MantineNotification>
+    );
 };
 
 export default Notification;

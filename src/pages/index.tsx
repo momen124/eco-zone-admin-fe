@@ -26,6 +26,9 @@ export default function Home() {
         <Link href="/users" legacyBehavior>
           <a className="block mb-4">Users</a>
         </Link>
+        <Link href="/reports" legacyBehavior>
+          <a className="block mb-4">reports</a>
+        </Link>
       </div>
     </main>
   );

@@ -1,42 +1,31 @@
-import type { InputProps } from '@mantine/core';
-import { Input } from '@mantine/core';
-import { IconSearch, IconShoppingCart, IconUser } from '@tabler/icons-react';
+// components/Header.js
+import React from 'react';
 import Link from 'next/link';
-import LanguageToggle from './Header/LanguageToggle';
 
-interface CustomInputProps extends InputProps {
-  icon?: React.ReactNode;
-  placeholder?: string; // Ensure placeholder is included in CustomInputProps
-}
+const Header = () => {
+    return (
+        <header className="bg-white shadow p-4 flex justify-between items-center">
+            <div>
+                <h1 className="text-xl font-semibold">New Product</h1>
+                <p className="text-gray-500">Pages / New Product</p>
+            </div>
+            <div className="flex items-center">
+                <div className="mr-6">
+                    <input type="text" placeholder="Search..." className="border rounded-lg p-2" />
+                </div>
+                <div className="flex items-center">
+                    <img src="/profile.jpg" alt="User" className="w-10 h-10 rounded-full" />
+                    <div className="ml-3">
+                        <p className="font-semibold">Sayo Kravits</p>
+                        <p className="text-gray-500">Public Relations</p>
+                    </div>
+                </div>
+                <Link href="/profile" legacyBehavior>
+                    <a className="ml-6 text-gray-700 hover:text-gray-900">Profile</a>
+                </Link>
+            </div>
+        </header>
+    );
+};
 
-const CustomInput = (props: CustomInputProps) => <Input {...props} />;
-
-export default function Header() {
-  return (
-    <header className="border-b py-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div>
-          <h1 className="text-xl font-bold">EcoZone eCommerce</h1>
-        </div>
-        <div className="flex items-center space-x-4">
-          <CustomInput 
-            icon={<IconSearch size={16} />} 
-            placeholder="Search in products" 
-            className="w-64" 
-          />
-          <nav className="flex items-center space-x-4">
-            <LanguageToggle />
-            <Link href="/profile" className="flex items-center space-x-2">
-              <IconUser size={16} />
-              <span>Profile</span>
-            </Link>
-            <Link href="/cart" className="flex items-center space-x-2">
-              <IconShoppingCart size={16} />
-              <span>Cart</span>
-            </Link>
-          </nav>
-        </div>
-      </div>
-    </header>
-  );
-}
+export default Header;

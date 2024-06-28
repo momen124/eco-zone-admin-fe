@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Title, Text } from '@mantine/core';
-import AdminLayout from './layout';
+import AdminLayout from '../components/layout';
 import CustomPagination from '../components/Pagination';
 
 const Analytics = () => {

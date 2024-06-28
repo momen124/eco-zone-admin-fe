@@ -1,28 +1,27 @@
-import { Title, Text, Card, Grid, Col } from '@mantine/core';
-import AdminLayout from './layout';
+import StatisticsCards from '../components/StatisticsCards';
+import SalesOverview from '../components/SalesOverview';
+import TeamMembers from '../components/TeamMembers';
+import ToDoList from '../components/ToDoList';
+import ProgressTracker from '../components/ProgressTracker';
+import UserProfile from '../components/UserProfile';
+import ProjectTable from '../components/ProjectTable';
+import Layout from '@/components/layout';
 
 const Dashboard = () => {
   return (
-    <AdminLayout>
-      <Title order={2}>Dashboard</Title>
-      <Grid>
-        <Col span={4}>
-          <Card shadow="sm" p="lg">
-            <Text>Card 1</Text>
-          </Card>
-        </Col>
-        <Col span={4}>
-          <Card shadow="sm" p="lg">
-            <Text>Card 2</Text>
-          </Card>
-        </Col>
-        <Col span={4}>
-          <Card shadow="sm" p="lg">
-            <Text>Card 3</Text>
-          </Card>
-        </Col>
-      </Grid>
-    </AdminLayout>
+    <Layout>
+      <StatisticsCards />
+      <SalesOverview />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <TeamMembers />
+        <ToDoList />
+      </div>
+      <ProgressTracker />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <UserProfile />
+        <ProjectTable />
+      </div>
+    </Layout>
   );
 };
 

@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@heroicons/react": "^2.1.4",
     "@mantine/core": "^7.11.0",
     "@mantine/hooks": "^7.10.2",
     "@mantine/notifications": "^7.10.2",
@@ -18,8 +19,10 @@
     "cookies-next": "^4.2.1",
     "next": "14.2.4",
     "next-auth": "^4.24.7",
+    "outline": "link:@heroicons/react/outline",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "tabler-icons-react": "^1.56.0",
     "useLanguage": "link:@/hooks/useLanguage"
   },
   "devDependencies": {

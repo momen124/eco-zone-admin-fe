@@ -1,6 +1,6 @@
 import { Title, Table, Button, Modal, Text } from '@mantine/core';
 import { useState, useEffect } from 'react';
-import AdminLayout from './layout';
+import AdminLayout from '../components/layout';
 
 const Listings = () => {
   const [listings, setListings] = useState([]);
