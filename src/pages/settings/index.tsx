@@ -1,7 +1,5 @@
-// pages/settings.js
-import React from 'react';
-import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
+import Header from '../../components/layout/layout-components/Header';
+import Sidebar from '../../components/layout/layout-components/Sidebar';
 
 const Settings = () => {
     return (

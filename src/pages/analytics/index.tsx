@@ -1,7 +1,7 @@
+import { Text, Title } from '@mantine/core';
 import { useState } from 'react';
-import { Title, Text } from '@mantine/core';
-import AdminLayout from '../components/layout';
-import CustomPagination from '../components/Pagination';
+import AdminLayout from '../../components/layout';
+import CustomPagination from '../../components/Pagination';
 
 const Analytics = () => {
   const analyticsData = [
@@ -17,7 +17,7 @@ const Analytics = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const visibleData = analyticsData.slice(startIndex, startIndex + itemsPerPage);
 
-  const handleChangePage = (page) => {
+  const handleChangePage = (page: number) => {
     setCurrentPage(page);
   };
 

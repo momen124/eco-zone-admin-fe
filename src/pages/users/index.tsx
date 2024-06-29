@@ -1,11 +1,12 @@
-import { Title, Table, Button } from '@mantine/core';
-import { useState, useEffect } from 'react';
-import AdminLayout from '../components/layout';
-import LoadingSpinner from '../components/LoadingSpinner';
+import { Button, Table, Title } from '@mantine/core';
+import { useEffect, useState } from 'react';
+import AdminLayout from '../../components/layout';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
+type User = { id: number, name: string, status: string }
 
 const Users = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,11 +20,11 @@ const Users = () => {
     }, 2000);
   }, []);
 
-  const suspendUser = (id) => {
+  const suspendUser = (id: number) => {
     console.log(`Suspended user ${id}`);
   };
 
-  const banUser = (id) => {
+  const banUser = (id: number) => {
     console.log(`Banned user ${id}`);
   };
 

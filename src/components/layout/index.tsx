@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import Sidebar from './Sidebar';
-import Header from './Header';
+import Header from './layout-components/Header';
+import Sidebar from './layout-components/Sidebar';
 
 const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
     return (
@@ -8,7 +8,7 @@ const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
             <Sidebar />
             <div className="flex-1 flex flex-col">
                 <Header />
-                <main className="p-6 flex-1">{children}</main>
+                <main className="p-6 flex-1 bg-gray-50">{children}</main>
             </div>
         </div>
     );

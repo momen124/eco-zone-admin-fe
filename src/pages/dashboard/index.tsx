@@ -1,11 +1,11 @@
-import StatisticsCards from '../components/StatisticsCards';
-import SalesOverview from '../components/SalesOverview';
-import TeamMembers from '../components/TeamMembers';
-import ToDoList from '../components/ToDoList';
-import ProgressTracker from '../components/ProgressTracker';
-import UserProfile from '../components/UserProfile';
-import ProjectTable from '../components/ProjectTable';
 import Layout from '@/components/layout';
+import ProgressTracker from '../../components/ProgressTracker';
+import ProjectTable from '../../components/ProjectTable';
+import SalesOverview from '../../components/SalesOverview';
+import StatisticsCards from '../../components/StatisticsCards';
+import TeamMembers from '../../components/TeamMembers';
+import ToDoList from '../../components/ToDoList';
+import UserProfile from '../../components/UserProfile';
 
 const Dashboard = () => {
   return (

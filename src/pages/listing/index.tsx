@@ -1,11 +1,13 @@
-import { Title, Table, Button, Modal, Text } from '@mantine/core';
-import { useState, useEffect } from 'react';
-import AdminLayout from '../components/layout';
+import { Button, Modal, Table, Text, Title } from '@mantine/core';
+import { useEffect, useState } from 'react';
+import AdminLayout from '../../components/layout';
+
+type Listing = { id: number, title: string, status: string }
 
 const Listings = () => {
-  const [listings, setListings] = useState([]);
+  const [listings, setListings] = useState<Listing[]>([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [listingToDelete, setListingToDelete] = useState(null);
+  const [listingToDelete, setListingToDelete] = useState<number | null>(null);
 
   useEffect(() => {
     setListings([
@@ -15,12 +17,12 @@ const Listings = () => {
     ]);
   }, []);
 
-  const deleteListing = (id) => {
+  const deleteListing = (id: number) => {
     console.log(`Deleted listing ${id}`);
     setShowDeleteModal(false);
   };
 
-  const handleDeleteClick = (id) => {
+  const handleDeleteClick = (id: number) => {
     setListingToDelete(id);
     setShowDeleteModal(true);
   };
@@ -58,7 +60,7 @@ const Listings = () => {
         size="sm"
       >
         <Text>Are you sure you want to delete this listing?</Text>
-        <Button color="red" onClick={() => deleteListing(listingToDelete)}>Delete</Button>
+        <Button color="red" onClick={() => { if (listingToDelete) deleteListing(listingToDelete) }}>Delete</Button>
       </Modal>
     </AdminLayout>
   );
